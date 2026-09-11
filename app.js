@@ -486,11 +486,7 @@
         : '<i class="person__slot">' + esc(label) + '</i>';
     }
 
-    /* На публичном сайте пустые карточки мастеров не показываем:
-       пока ни у кого нет имени, блок с людьми просто не выводится. */
-    var hasPeople = t.people.some(function (p) { return !!p.name; });
-
-    var people = !hasPeople ? '' : t.people.map(function (p) {
+    var people = t.people.map(function (p) {
       var empty = !p.name;
       return '<article class="person' + (empty ? ' person--empty' : '') + '">' +
         '<figure class="person__figure">' +
@@ -515,7 +511,7 @@
 
     return '<section class="team" id="team"><div class="wrap">' +
       '<h2 class="team__title">' + accent(t.title) + '</h2>' +
-      (people ? '<div class="team__grid">' + people + '</div>' : '') +
+      '<div class="team__grid">' + people + '</div>' +
       '<div class="not">' +
         '<h3 class="not__title">' + esc(t.notTitle) + '</h3>' +
         '<ul class="not__list">' + not + '</ul>' +
