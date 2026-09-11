@@ -1193,3 +1193,24 @@ a.review:hover .review__go { color: var(--text); transform: translateX(3px); }
    колонку шире экрана и текст ответа обрезался справа. Разрешаем колонке
    сжиматься — тогда лента листается внутри, а текст переносится. */
 .acc__inner > * { min-width: 0; }
+
+/* =====================================================================
+   Первый экран выровнен по центру: заголовок, переключаемая строка,
+   подпись над фото, счётчик и кнопка записи. Счётчик стоит над кнопкой.
+   Мини-хуки намеренно остаются с выключкой влево — списком их читать
+   удобнее, чем по центру.
+   ===================================================================== */
+.hero__title,
+.hero__engines,
+.hero__term { text-align: center; }
+
+#hero-caption { text-align: center; }
+
+.hero__actions {
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.hero__counter { justify-content: center; }
